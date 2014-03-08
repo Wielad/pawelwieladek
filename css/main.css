@@ -148,13 +148,22 @@ h1, .h1 {
     margin: 0;
 }
 
-.input-group-addon,
+.pw-btn-caption,
 .btn {
     border-radius: 0;
     border: none;
 }
 
-.input-group-addon {
+.pw-btn-caption {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
     background-color: rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.5);
 }
