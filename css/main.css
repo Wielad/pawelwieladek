@@ -104,25 +104,21 @@ body {
     font-family: 'Lato';
 }
 
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-family: 'Enriqueta';
+}
+
 #mainContainer {
     margin-top: 60px;
 }
 
 #mainName {
-    margin: 120px 0 20px 0;
-    font-family: 'Enriqueta';
-}
-
-@media (max-width: 1199px) {
-    #mainName {
-        margin: 80px 0 20px 0;
-    }
-}
-
-@media (max-width: 991px) {
-    #mainName {
-        margin: 0 0 20px 0;
-    }
+    margin: 0 0 20px 0;
 }
 
 @media (max-width: 767px) {
@@ -141,6 +137,10 @@ body {
 
 .row {
     margin: 15px 0;
+}
+
+ul, ol {
+    margin-bottom: 0;
 }
 
 h1, .h1 {
@@ -174,20 +174,34 @@ h1, .h1 {
 }
 
 .pw-btn {
-    width: 40px;
+    min-width: 40px;
     text-align: center;
-    color: #fff;
 }
 
 .btn-default {
     background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
 }
 
 ul > li {
     margin-bottom: 15px;
 }
 
+.pw-no-margin {
+    margin: 0;
+}
 
+.pw-dotted-line {
+    width: 25%;
+    height: 1px;
+    border-bottom: 5px dotted rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 767px) {
+    .pw-dotted-line {
+        margin: 10px auto;
+    }
+}
 
 
 
