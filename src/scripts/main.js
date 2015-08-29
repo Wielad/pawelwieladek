@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 let CommentBox = React.createClass({
   render() {
     return (
-      <div className="commentBox">
+      <div className='commentBox'>
       Pawel
       </div>
     );
