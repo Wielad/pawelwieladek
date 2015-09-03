@@ -1,0 +1,65 @@
+@import "vendors";
+
+body {
+  font-family: 'Palanquin';
+}
+
+.container {
+  max-width: 900px;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.profile-picture {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+
+  img {
+    height: 260px;
+    border-radius: 6px;
+  }
+}
+
+.landing-header {
+  font-size: 4em;
+  font-weight: 400;
+}
+
+.landing-subheader {
+  font-size: 3em;
+  font-weight: 100;
+}
+
+.menu-bar {
+  margin-top: 60px;
+
+  .btn {
+    font-size: 1.2em;
+    padding: 15px 0;
+    width: 260px;
+    border: 1px solid #000;
+    line-height: 1;
+    background: #fff;
+    color: #000;
+    transition: all 200ms;
+    outline: none;
+
+    &:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.under-construction {
+  font-size: 2em;
+  font-weight: 100;
+}

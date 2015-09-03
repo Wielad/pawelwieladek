@@ -1,2 +1,4 @@
-node_modules
-.publish
+.idea/
+.publish/
+node_modules/
+dist/

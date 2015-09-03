@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var gulp = require('gulp');
 var del = require('del');
 var stdio = require('stdio');
@@ -15,14 +16,15 @@ var gutil = require('gulp-util');
 var serve = require('gulp-serve');
 var livereload = require('gulp-livereload');
 var preprocess = require('gulp-preprocess');
+var imagemin = require('gulp-imagemin');
+var sass = require('gulp-sass');
+var pkg = require('./package.json');
 
 var options = stdio.getopt({
     'production': { key: 'p', description: 'Production mode', 'defualt': false }
 });
 
-var dependencies = [
-    'react' // react is part of this boilerplate
-];
+var dependencies = _.keys(pkg.dependencies);
 
 var paths = {
   src: './src/',
@@ -31,15 +33,14 @@ var paths = {
   vendors: 'vendors.js'
 };
 
-var browserifyTask = function (params) {
-
+var buildApp = function(params) {
   /* First we define our application bundler. This bundle is the
      files you create in the 'app' folder */
   var appBundler = browserify({
-      entries: [params.src], // The entry file, normally 'main.js'
+      entries: ['./src/scripts/main.js'], // The entry file, normally 'main.js'
       transform: [babelify, reactify], // Convert JSX style
       debug: params.development, // Sourcemapping
-      cache: {}, packageCache: {}, fullPaths: true // Requirement of watchify
+      cache: {}, packageCache: {}, fullPaths: params.development // Requirement of watchify
   });
 
   /* We set our dependencies as externals of our app bundler.
@@ -51,11 +52,11 @@ var browserifyTask = function (params) {
   var rebundle = function () {
     var start = Date.now();
     console.log('Building app bundle');
-    appBundler.bundle()
+    return appBundler.bundle()
       .on('error', gutil.log)
       .pipe(source(paths.main))
       .pipe(gulpif(!params.development, streamify(uglify())))
-      .pipe(gulp.dest(params.dest))
+      .pipe(gulp.dest('./dist/scripts/'))
       .pipe(gulpif(params.development, livereload({ start: true }))) // It notifies livereload about a change if you use it
       .pipe(notify(function () {
         console.log('App bundle built in ' + (Date.now() - start) + 'ms');
@@ -70,63 +71,100 @@ var browserifyTask = function (params) {
   }
 
   // And trigger the initial bundling
-  rebundle();
+  return rebundle();
+};
 
+var buildVendors = function (params) {
+  if (params.development) {
   /* And now we have to create our third bundle, which are our external dependencies,
      or vendors. This is React JS, underscore, jQuery etc. We only do this when developing
      as our deployed code will be one file with all application files and vendors */
-  var vendorsBundler = browserify({
-    debug: true, // It is nice to have sourcemapping when developing
-    require: dependencies
-  });
+    var vendorsBundler = browserify({
+      debug: true, // It is nice to have sourcemapping when developing
+      require: dependencies
+    });
 
-  /* We only run the vendor bundler once, as we do not care about changes here,
-     as there are none */
-  var start = new Date();
-  console.log('Building vendors bundle');
-  vendorsBundler.bundle()
-    .on('error', gutil.log)
-    .pipe(source(paths.vendors))
-    .pipe(gulpif(!params.development, streamify(uglify())))
-    .pipe(gulp.dest(params.dest))
-    .pipe(notify(function () {
-      console.log('Vendors bundle built in ' + (Date.now() - start) + 'ms');
-    }));
+    /* We only run the vendor bundler once, as we do not care about changes here,
+       as there are none */
+    var start = new Date();
+    console.log('Building vendors bundle');
+    return vendorsBundler.bundle()
+      .on('error', gutil.log)
+      .pipe(source(paths.vendors))
+      .pipe(gulpif(!params.development, streamify(uglify())))
+      .pipe(gulp.dest('./dist/scripts/'))
+      .pipe(notify(function () {
+        console.log('Vendors bundle built in ' + (Date.now() - start) + 'ms');
+      }));
+  }
+};
+
+var appScriptsTask = function() {
+    return buildApp({
+      development: !options.production
+    });
+};
+
+var vendorsScriptsTask = function() {
+    return buildVendors({
+      development: !options.production
+    });
 };
 
 var buildHtml = function(params) {
     gulp.src('./src/*.html')
       .pipe(preprocess({ context: { NODE_ENV: params.development ? 'development' : 'production' }}))
-      .pipe(gulp.dest(paths.dist));
+      .pipe(gulp.dest(paths.dist))
+      .pipe(gulpif(params.development, livereload({ start: true })));
 };
 
 var htmlTask = function() {
-    buildHtml({
+    return buildHtml({
       development: !options.production
     });
 };
 
+var buildStyles = function(params) {
+  gulp.src('./src/styles/styles.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./dist/styles'))
+    .pipe(gulpif(params.development, livereload({ start: true })));
+};
+
+var stylesTask = function() {
+  return buildStyles({
+    development: !options.production
+  });
+};
+
 gulp.task('clear', function(callback) {
-  del(['app'], callback);
+  del(['./dist/'], callback);
 });
 
 gulp.task('html', ['clear'], htmlTask);
 
-gulp.task('watch', function() {
-  gulp.watch('src/*.html', htmlTask);
+gulp.task('styles', ['clear'], stylesTask);
+
+gulp.task('app-scripts', ['clear'], appScriptsTask);
+gulp.task('vendors-scripts', ['clear'], vendorsScriptsTask);
+gulp.task('scripts', ['app-scripts', 'vendors-scripts']);
+
+gulp.task('images', ['clear'], function () {
+    return gulp.src('src/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('scripts', ['clear'], function() {
-  browserifyTask({
-    development: !options.production,
-    src: './src/scripts/main.js',
-    dest: './dist/scripts'
-  });
-});
+gulp.task('build', ['html', 'scripts', 'images', 'styles']);
 
 gulp.task('serve', serve(paths.dist));
 
-gulp.task('deploy', function() {
+gulp.task('watch', function() {
+  gulp.watch('src/*.html', htmlTask);
+  gulp.watch('src/styles/*.scss', stylesTask);
+});
+
+gulp.task('deploy', ['build'], function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages({
       remoteUrl: 'https://github.com/pawelwieladek/pawelwieladek.github.io.git',
@@ -134,4 +172,4 @@ gulp.task('deploy', function() {
     }));
 });
 
-gulp.task('default', ['html', 'scripts', 'watch']);
+gulp.task('default', ['build', 'watch']);
