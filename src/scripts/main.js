@@ -1,35 +1,20 @@
 import React from 'react';
-import { Row, Col, Grid, Button } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
+import { Grid, Button, Row, Col } from 'react-bootstrap';
+
+require('../styles/styles.scss');
+let imgSrc = require('../images/profile.jpg');
 
 let App = React.createClass({
   render() {
     return (
       <Grid>
         <Row>
-          <Col md={12}>
-            <div className="profile-picture">
-              <img src="images/me.jpg" />
-            </div>
+          <Col md={3}>
+            <img src={imgSrc} className="img-responsive profile-picture" />
           </Col>
-        </Row>
-        <Row>
-          <Col md={12} className="landing-header">
-            Paweł Wielądek
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12} className="landing-subheader">
-            Front-end Developer
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-              <img src="images/shovel.png" width="80" />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-              <span className="under-construction">Under construction</span>
+          <Col md={9}>
+            <h1>Pawel Wieladek</h1>
           </Col>
         </Row>
       </Grid>
@@ -37,4 +22,4 @@ let App = React.createClass({
   }
 });
 
-React.render(<App />, document.body);
+ReactDOM.render(<App />, document.querySelector('#app'));
