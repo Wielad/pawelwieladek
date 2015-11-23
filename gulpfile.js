@@ -1,9 +1,9 @@
 var gulp = require('gulp');
-var ghPages = require('gulp-gh-pages');
+var githubPages = require('gulp-gh-pages');
 
-gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages({
+gulp.task('publish', function() {
+  return gulp.src('./public/**/*')
+    .pipe(githubPages({
       remoteUrl: 'https://github.com/pawelwieladek/pawelwieladek.github.io.git',
       branch: 'master'
     }));

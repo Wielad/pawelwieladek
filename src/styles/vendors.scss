@@ -1,15 +1,8 @@
-$jumbotron-padding: 20px !default;
-
-$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+@import "variables";
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 .jumbotron {
-  padding-top: $jumbotron-padding;
-  padding-bottom: $jumbotron-padding;
-
-  .container &,
-  .container-fluid & {
-    padding-left: $jumbotron-padding;
-    padding-right: $jumbotron-padding;
+  h2 {
+    color: $gray-light
   }
 }

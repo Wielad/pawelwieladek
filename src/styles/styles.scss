@@ -1,10 +1,10 @@
 @import "vendors";
 
 body {
-  font-family: 'Palanquin', sans-serif;
   padding: 20px;
 }
 
 .profile-picture {
+  max-width: 150px;
   border-radius: 50%;
 }
