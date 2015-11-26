@@ -1,6 +1,6 @@
+var webpack = require('webpack');
 var path = require('path');
 var Clean = require('clean-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, 'src/scripts/main.js'),
@@ -22,7 +22,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract("style", "css!sass")
+        loaders: ['style', 'css', 'sass']
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -51,7 +51,11 @@ module.exports = {
     contentBase: path.join(__dirname, './public/')
   },
   plugins: [
-    new Clean(['./public/dist']),
-    new ExtractTextPlugin('styles.css')
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+    new Clean(['./public/dist'])
   ]
 };

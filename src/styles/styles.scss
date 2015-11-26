@@ -1,10 +1,16 @@
+@import "variables";
 @import "vendors";
 
 body {
   padding: 20px;
 }
 
-.profile-picture {
-  max-width: 150px;
-  border-radius: 50%;
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+
+  img {
+    max-width: 150px;
+    border-radius: 50%;
+  }
 }

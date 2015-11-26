@@ -3,14 +3,13 @@
   "version": "2.0.0",
   "description": "Pawel Wieladek Web Developer",
   "main": "index.js",
-  "repository": {
-
-  },
+  "repository": {},
   "scripts": {
     "test": "./node_modules/.bin/eslint ./src/",
     "prebuild": "npm run test",
     "build": "./node_modules/.bin/webpack --config ./webpack.config.js",
     "serve": "./node_modules/.bin/webpack-dev-server",
+    "prepublish": "npm run build",
     "publish": "./node_modules/.bin/gulp publish"
   },
   "author": "Pawel Wieladek",
@@ -38,6 +37,8 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "classnames": "^2.2.1",
+    "font-awesome": "^4.4.0",
     "react": "^0.14.3",
     "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.3"

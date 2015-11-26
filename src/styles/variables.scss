@@ -22,14 +22,14 @@ $font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default;
 $font-size-small:         ceil(($font-size-base * 0.85)) !default;
 
-$font-size-h1:            floor(($font-size-base * 3)) !default;
-$font-size-h2:            floor(($font-size-base * 2.5)) !default;
-$font-size-h3:            ceil(($font-size-base * 2)) !default;
-$font-size-h4:            ceil(($font-size-base * 1.5)) !default;
+$font-size-h1:            floor(($font-size-base * 1.8)) !default;
+$font-size-h2:            floor(($font-size-base * 1.6)) !default;
+$font-size-h3:            ceil(($font-size-base * 1.4)) !default;
+$font-size-h4:            ceil(($font-size-base * 1.2)) !default;
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * 0.8)) !default;
 
-$headings-font-weight:    100 !default;
+$headings-font-weight:    700 !default;
 
 $jumbotron-padding:              20px !default;
 $jumbotron-color:                inherit !default;
@@ -39,3 +39,4 @@ $jumbotron-font-size:            $font-size-base !default;
 $jumbotron-heading-font-size:    $font-size-h1 !default;
 
 $icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "../../node_modules/font-awesome/fonts";
