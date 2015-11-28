@@ -2,15 +2,45 @@
 @import "vendors";
 
 body {
-  padding: 20px;
+  padding: $grid-gutter-width / 2;
 }
 
-.profile-header {
+.sidebar {
+  border-right: 1px solid $gray-lighter;
+}
+
+.header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: $grid-gutter-width;
 
   img {
     max-width: 150px;
     border-radius: 50%;
+  }
+}
+
+section {
+  margin-bottom: $grid-gutter-width;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .section-header {
+    border-bottom: 1px solid $gray-lighter;
+    margin-bottom: $grid-gutter-width / 2;
+  }
+
+  .fromTo {
+    color: $gray-light;
+  }
+
+  .social-link {
+    display: block;
+    padding: $padding-base-vertical $padding-base-horizontal;
+
+    ul {
+      margin-bottom: 5px;
+    }
   }
 }

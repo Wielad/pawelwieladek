@@ -14,10 +14,7 @@ module.exports = {
       {
         test: /.js?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
+        exclude: /node_modules/
       },
       {
         test: /\.scss$/,
@@ -30,10 +27,7 @@ module.exports = {
         loader: 'url?limit=10000'
       },
       {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=10000&mimetype=application/font-woff"
-      }, {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url?limit=10000&mimetype=application/font-woff"
       }, {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
@@ -51,11 +45,11 @@ module.exports = {
     contentBase: path.join(__dirname, './public/')
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
+    //new webpack.optimize.UglifyJsPlugin({
+    //  compress: {
+    //    warnings: false
+    //  }
+    //}),
     new Clean(['./public/dist'])
   ]
 };
