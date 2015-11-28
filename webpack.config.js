@@ -45,11 +45,11 @@ module.exports = {
     contentBase: path.join(__dirname, './public/')
   },
   plugins: [
-    //new webpack.optimize.UglifyJsPlugin({
-    //  compress: {
-    //    warnings: false
-    //  }
-    //}),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     new Clean(['./public/dist'])
   ]
 };
