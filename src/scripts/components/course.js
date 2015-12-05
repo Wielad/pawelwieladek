@@ -13,7 +13,7 @@ export default class Course extends Component {
         return (
             <div className="job">
                 <h3>{this.props.name} @ {this.props.university}</h3>
-                <h4 className="fromTo">{this.props.from} - {this.props.to}</h4>
+                <h4 className="date-range">{this.props.from} - {this.props.to}</h4>
                 <p>
                     <strong>Project: </strong>
                     <span>{this.props.project}</span>

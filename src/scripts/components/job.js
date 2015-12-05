@@ -12,7 +12,7 @@ export default class Job extends Component {
         return (
             <div className="job">
                 <h3>{this.props.employer}</h3>
-                <h4 className="fromTo">{this.props.from} - {this.props.to}</h4>
+                <h4 className="date-range">{this.props.from} - {this.props.to}</h4>
                 <p>{this.props.description}</p>
             </div>
         );

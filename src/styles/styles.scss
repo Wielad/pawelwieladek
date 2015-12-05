@@ -3,10 +3,53 @@
 
 body {
   padding: $grid-gutter-width / 2;
+
+  @media print {
+    padding: 0;
+    font-size: 12px;
+  }
 }
 
-.sidebar {
-  border-right: 1px solid $gray-lighter;
+h1, .h1 { @media print { font-size: ceil(($font-size-h1 * 0.7)); } }
+h2, .h2 { @media print { font-size: ceil(($font-size-h2 * 0.7)); } }
+h3, .h3 { @media print { font-size: ceil(($font-size-h3 * 0.7)); } }
+h4, .h4 { @media print { font-size: ceil(($font-size-h4 * 0.7)); } }
+h5, .h5 { @media print { font-size: ceil(($font-size-h5 * 0.7)); } }
+h6, .h6 { @media print { font-size: ceil(($font-size-h6 * 0.7)); } }
+
+.resume {
+  @extend .container;
+
+  @media print {
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+.introduction {
+  @extend .col-md-4;
+
+  @media (min-width: $screen-md-min) {
+    border-right: 1px solid $gray-lighter;
+  }
+
+  @media print {
+    @extend .col-xs-4;
+    padding-left: 0;
+    border-right: 1px solid $gray-lighter;
+    min-height: 100%;
+  }
+}
+
+.features {
+  @extend .col-md-8;
+
+  @media print {
+    @extend .col-xs-8;
+    padding-right: 0;
+    min-height: 100%;
+  }
 }
 
 .header {
@@ -27,11 +70,10 @@ section {
   }
 
   .section-header {
-    border-bottom: 1px solid $gray-lighter;
     margin-bottom: $grid-gutter-width / 2;
   }
 
-  .fromTo {
+  .date-range {
     color: $gray-light;
   }
 

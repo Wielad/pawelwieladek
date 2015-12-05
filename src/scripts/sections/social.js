@@ -25,7 +25,7 @@ export default class Social extends Component {
             );
         })
         return (
-            <Section title="Contact">
+            <Section title="Social">
                 {links}
             </Section>
         );
