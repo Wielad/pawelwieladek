@@ -9,9 +9,10 @@
     "prebuild": "npm run test",
     "build": "./node_modules/.bin/webpack --config ./webpack.config.js",
     "serve": "./node_modules/.bin/webpack-dev-server",
-    "prepublish": "npm run build",
-    "publish": "./node_modules/.bin/gulp publish"
+    "predeploy": "npm run build",
+    "deploy": "./node_modules/.bin/gulp deploy"
   },
+  "private": true,
   "author": "Pawel Wieladek",
   "license": "ISC",
   "devDependencies": {
@@ -39,6 +40,7 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "font-awesome": "^4.4.0",
+    "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.3"
