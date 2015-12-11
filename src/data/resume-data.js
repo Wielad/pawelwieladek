@@ -46,7 +46,7 @@ module.exports = {
                 "employer": "Allegro Group",
                 "from": "Jun 2014",
                 "to": "now",
-                "description": "I was part of a big data team as a front-end developer working on analytics dashboards that consists of multiple charts and tables. Then I created a tracking tool for the Web and Android. Now I'm working on a framework that enables creating modular websites.",
+                "description": "I am part of a big data team and work on analytics dashboards that consists of multiple charts and tables. I created a tracking tool for the Web and Android. The second project I contribute to is a platform that binds responses from multiple microservices with unified front end components.",
                 tags: [
                     "javascript",
                     "es2015",
@@ -72,7 +72,7 @@ module.exports = {
                 "employer": "MyBaze.com",
                 "from": "Mar 2013",
                 "to": "Mar 2014",
-                "description": "Working for a startup was demanding but brings a lot of fun in the same time. I introduced Bootstrap and Backbone to the team and created complete style guide. As a balance to front-end tasks I committed (successfully) to deploy full text search in the project.",
+                "description": "Working for a startup was demanding but brings a lot of fun in the same time. I introduced Bootstrap and Backbone to the young team, created a complete style guide and deployed a full text search into the marketplace platform.",
                 tags: [
                     "javascript",
                     "backbone",
