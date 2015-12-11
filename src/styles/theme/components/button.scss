@@ -1,23 +1,49 @@
 .button {
   display: inline-block;
-  padding: $padding-base-vertical $padding-base-horizontal;
-  border: 1px solid $brand-primary;
-  border-right: 0;
-  color: $brand-primary;
+  padding: $padding-small-vertical $padding-base-horizontal $padding-base-vertical $padding-base-horizontal;
+  border-width: 1px;
+  border-style: solid;
+  border-right-width: 0;
   transition: all 150ms;
 
   &:first-child {
-    border-radius: 21px 0 0 21px;
+    border-top-left-radius: 21px;
+    border-bottom-left-radius: 21px;
   }
 
   &:last-child {
-    border-radius: 0 21px 21px 0;
-    border-right: 1px solid $brand-primary;
+    border-right-width: 1px;
+    border-top-right-radius: 21px;
+    border-bottom-right-radius: 21px;
   }
 
   &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.button-primary {
+  border-color: $brand-primary;
+  color: $brand-primary;
+
+  &:hover,
+  &:focus,
   &:active {
     background: $brand-primary;
+    color: $gray-lighter;
+  }
+}
+
+.button-default {
+  border-color: $gray-dark;
+  color: $gray-dark;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $gray-dark;
     color: $gray-lighter;
   }
 }

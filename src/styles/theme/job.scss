@@ -24,4 +24,35 @@
       text-align: left;
     }
   }
+
+  .tag-container {
+    margin-top: $grid-gutter-width / 2;
+    text-align: center;
+
+    @media print {
+      margin-top: $grid-gutter-width / 4;
+      text-align: left;
+    }
+  }
+
+  .label {
+    display: inline-block;
+    font-weight: 300;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    line-height: inherit;
+    font-size: 100%;
+    border-radius: 15px;
+    background: transparent;
+    border: 1px solid $gray-light;
+    color: $gray-light;
+
+    @media print {
+      font-size: 75%;
+      line-height: 1;
+      margin-left: 5px;
+      margin-bottom: 5px;
+      border-radius: 13px;
+    }
+  }
 }
