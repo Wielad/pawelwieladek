@@ -12,12 +12,24 @@
       @include make-row;
     }
 
-    .language {
-      @media screen {
-        @include create-col(xs, 6);
+    @media print {
+      width: 50%;
+    }
 
-        h3 {
-          margin-top: 0;
+    .language {
+      @include create-col(xs, 6);
+
+      h3 {
+        margin-top: 0;
+      }
+
+      @media print {
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
         }
       }
     }
