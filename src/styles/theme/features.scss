@@ -1,0 +1,11 @@
+@import "work";
+@import "education";
+
+.features {
+  @include reset-col;
+
+  @media print {
+    @extend .col-md-4;
+    min-height: 100%;
+  }
+}

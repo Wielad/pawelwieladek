@@ -1,0 +1,12 @@
+@import "profile";
+@import "social";
+
+.introduction {
+  @include reset-col;
+  @include page;
+
+  @media print {
+
+    min-height: 100%;
+  }
+}

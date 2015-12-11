@@ -12,14 +12,10 @@ export default class Job extends Component {
     render() {
         return (
             <div className="job">
-                <div className="image-container">
-                    <img src={this.props.imageSrc} />
-                </div>
-                <div className="description-container">
-                    <h3>{this.props.employer}</h3>
-                    <h4 className="date-range">{this.props.from} - {this.props.to}</h4>
-                    <p>{this.props.description}</p>
-                </div>
+                <img src={this.props.imageSrc} />
+                <h3 className="employer">{this.props.employer}</h3>
+                <h4 className="date-range">{this.props.from} - {this.props.to}</h4>
+                <p className="description">{this.props.description}</p>
             </div>
         );
     }

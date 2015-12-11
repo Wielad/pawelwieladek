@@ -1,0 +1,32 @@
+@import "center-aligned-container";
+@import "center-aligned";
+
+@mixin reset-col {
+  @media screen {
+    width: inherit;
+    float: inherit;
+    position: inherit;
+    min-height: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+  }
+}
+
+@mixin page() {
+  @media screen {
+    @include center-aligned-container;
+    width: 100%;
+    min-height: 100%;
+    padding: $grid-gutter-width / 2;
+
+    section {
+      @include center-aligned;
+
+      .section-container {
+        display: inline-block;
+        text-align: left;
+        max-width: $container-desktop;
+      }
+    }
+  }
+}

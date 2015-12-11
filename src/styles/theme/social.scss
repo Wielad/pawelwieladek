@@ -1,0 +1,39 @@
+.social {
+  @media screen {
+    text-align: center;
+  }
+
+  .links {
+    display: inline-block;
+    text-align: left;
+
+    a.social-link {
+      font-size: 18px;
+      @extend .button;
+
+      @media print {
+        font-size: 12px;
+        display: block;
+        padding: $padding-base-vertical $padding-base-horizontal;
+        border: 0;
+
+        &:first-child {
+          border-radius: 0
+        }
+
+        &:last-child {
+          border-radius: 0;
+          border-right: 0;
+        }
+      }
+
+      ul {
+        margin-bottom: 0;
+      }
+
+      .list-inline {
+        margin-left: 0;
+      }
+    }
+  }
+}
