@@ -26,7 +26,9 @@ export default class Work extends Component {
                 <section>
                     <div className="section-container">
                         <h2>Work experience</h2>
-                        {jobs}
+                        <div className="jobs-container">
+                            {jobs}
+                        </div>
                     </div>
                 </section>
             </div>

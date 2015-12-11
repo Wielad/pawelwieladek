@@ -16,41 +16,47 @@
 
     @media print {
       @include make-row;
+      margin-right: 0;
     }
   }
 
   .border {
-    display: block;
-    position: fixed;
-    background: $white;
-    z-index: 100;
+    @media screen {
+      display: block;
+      position: fixed;
+      background: $white;
+      z-index: 100;
 
-    &.top {
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 20px;
+      &.top {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $grid-gutter-width / 2;
+      }
+
+      &.bottom {
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: $grid-gutter-width / 2;
+      }
+
+      &.left {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: $grid-gutter-width / 2;
+      }
+
+      &.right {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: $grid-gutter-width / 2;
+      }
     }
-
-    &.bottom {
-      left: 0;
-      bottom: 0;
-      right: 0;
-      height: 20px;
-    }
-
-    &.left {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 20px;
-    }
-
-    &.right {
-      top: 0;
-      bottom: 0;
-      right: 0;
-      width: 20px;
+    @media print {
+      display: none;
     }
   }
 }

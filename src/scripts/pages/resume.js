@@ -9,10 +9,11 @@ export default class Resume extends Component {
         social: PropTypes.object.isRequired,
         work: PropTypes.object.isRequired,
         education: PropTypes.object.isRequired,
+        languages: PropTypes.object.isRequired,
     }
 
     render() {
-        let { profile, social, work, education } = this.props;
+        let { profile, social, work, education, languages } = this.props;
         return (
             <div className="resume">
                 <div className="border top"></div>
@@ -21,7 +22,10 @@ export default class Resume extends Component {
                 <div className="border left"></div>
                 <div className="pages">
                     <Introduction profile={profile} social={social} />
-                    <Features work={work} education={education} />
+                    <Features
+                        work={work}
+                        education={education}
+                        languages={languages} />
                 </div>
             </div>
         );

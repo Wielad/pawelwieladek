@@ -73,4 +73,14 @@ module.exports = {
             },
         ],
     },
+    "languages": {
+        "pl": {
+            "language": "Polish",
+            "level": "Native",
+        },
+        "en": {
+            "language": "English",
+            "level": "Professional",
+        }
+    },
 };

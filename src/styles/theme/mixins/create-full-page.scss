@@ -1,0 +1,18 @@
+@mixin create-full-page() {
+  @include align-center-middle-container;
+  width: 100%;
+  min-height: 100%;
+  padding: $grid-gutter-width / 2;
+
+  section {
+    @include align-center-middle;
+    padding: $grid-gutter-width / 2;;
+
+    .section-container {
+      display: block;
+      margin: 0 auto;
+      text-align: left;
+      max-width: $container-desktop;
+    }
+  }
+}

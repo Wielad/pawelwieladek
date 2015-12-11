@@ -2,11 +2,12 @@
 @import "social";
 
 .introduction {
-  @include reset-col;
-  @include page;
+  @media screen {
+    @include create-full-page;
+  }
 
   @media print {
-
+    @include create-col(xs, 4);
     min-height: 100%;
   }
 }

@@ -12,7 +12,7 @@ export default class Course extends Component {
     render() {
         return (
             <div className="course">
-                <h3>{this.props.name} @ {this.props.university}</h3>
+                <h3>{this.props.name} <span className="at">@</span> {this.props.university}</h3>
                 <h4 className="date-range">{this.props.from} - {this.props.to}</h4>
                 <p>
                     <strong>Project: </strong>

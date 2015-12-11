@@ -1,0 +1,11 @@
+@mixin align-center-middle-container() {
+  text-align: center;
+  display: table;
+}
+
+@mixin align-center-middle() {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: center;
+}
