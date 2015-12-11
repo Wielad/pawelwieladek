@@ -93,6 +93,8 @@ h6, .h6 { @media print { font-size: ceil(($font-size-h6 * 0.7)); } }
   padding: $padding-base-vertical $padding-base-horizontal;
   border: 1px solid $brand-primary;
   border-right: 0;
+  color: $brand-primary;
+  transition: all 150ms;
 
   &:first-child {
     border-radius: 21px 0 0 21px;
@@ -101,6 +103,12 @@ h6, .h6 { @media print { font-size: ceil(($font-size-h6 * 0.7)); } }
   &:last-child {
     border-radius: 0 21px 21px 0;
     border-right: 1px solid $brand-primary;
+  }
+
+  &:hover,
+  &:active {
+    background: $brand-primary;
+    color: $gray-lighter;
   }
 }
 
