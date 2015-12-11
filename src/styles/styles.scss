@@ -195,6 +195,39 @@ section {
   }
 }
 
+.job {
+  > .image-container {
+    float: left;
+    position: relative;
+    width: percentage((3 / $grid-columns));
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;
+
+    img {
+      @extend .hidden-print;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  }
+  > .description-container {
+
+   float: left;
+   position: relative;
+   width: percentage((9 / $grid-columns));
+   padding-left: $grid-gutter-width / 2;
+   padding-right: $grid-gutter-width / 2;
+
+   @media print {
+     float: none;
+     position: static;
+     width: 100%;
+     padding-left: 0;
+     padding-right: 0;
+   }
+  }
+}
+
 .border {
   display: block;
   position: fixed;
