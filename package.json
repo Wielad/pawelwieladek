@@ -42,6 +42,6 @@
     "react": "^0.14.3",
     "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.3",
-    "resume-data": "git+ssh://git@bitbucket.org:pawelwieladek/resume-data.git"
+    "resume-data": "git+ssh://git@bitbucket.org:pawelwieladek/resume-data.git^1.1.0"
   }
 }

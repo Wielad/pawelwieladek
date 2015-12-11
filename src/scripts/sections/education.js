@@ -10,7 +10,7 @@ export default class Education extends Component {
     render() {
         let courses = this.props.courses.map(course => <Course key={course.name} {...course} />);
         return (
-            <Section title="Education">
+            <Section className="education" title="Education">
                 {courses}
             </Section>
         );

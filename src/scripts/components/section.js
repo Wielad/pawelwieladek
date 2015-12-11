@@ -12,10 +12,10 @@ export default class Section extends Component {
         let { title, children } = this.props;
         return (
             <section>
-                <div className="section-header">
+                <div>
                     <h2>{title}</h2>
+                    {children}
                 </div>
-                {children}
             </section>
         );
     }

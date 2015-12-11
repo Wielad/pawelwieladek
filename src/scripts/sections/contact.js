@@ -3,7 +3,7 @@ import React, { PropTypes, Component } from 'react';
 import Section from '../components/section';
 import ContactDetail from '../components/contact-detail';
 
-export default class Header extends Component {
+export default class Contact extends Component {
     static propTypes = {
         email: PropTypes.string.isRequired,
         phone: PropTypes.string.isRequired,

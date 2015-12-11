@@ -14,20 +14,21 @@ export default class Social extends Component {
         twitter: "fa-twitter",
     }
     render() {
-        let links = this.props.links.map(link => {
-            return (
+        let links = this.props.links.map(link => (
                 <SocialLink
                     key={link.name}
                     url={link.url}
                     icon={Social.icons[link.name]}>
                     {link.caption}
                 </SocialLink>
-            );
-        })
+            )
+        );
         return (
-            <Section title="Social">
+            <div className="social">
+                <div>
                 {links}
-            </Section>
+                </div>
+            </div>
         );
     }
 }

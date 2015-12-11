@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 
 import '../styles/styles.scss';
 import data from 'resume-data';
-import App from './sections/app';
+import Resume from './pages/resume';
 
 ReactDOM.render(
-    <App {...data} />,
+    <Resume {...data} />,
     document.querySelector('#app')
 );

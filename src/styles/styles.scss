@@ -2,7 +2,8 @@
 @import "vendors";
 
 body {
-  padding: $grid-gutter-width / 2;
+  padding: 0;
+  background: $white;
 
   @media print {
     padding: 0;
@@ -17,42 +18,67 @@ h4, .h4 { @media print { font-size: ceil(($font-size-h4 * 0.7)); } }
 h5, .h5 { @media print { font-size: ceil(($font-size-h5 * 0.7)); } }
 h6, .h6 { @media print { font-size: ceil(($font-size-h6 * 0.7)); } }
 
+@mixin page() {
+  width: 100%;
+  min-height: 100%;
+  padding: $grid-gutter-width / 2;
+}
+
 .resume {
-  @extend .container;
+  @media screen {
+    @include clearfix;
+  }
 
   @media print {
-    padding: 0;
+    @include container-fixed;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     min-height: 100%;
+  }
+
+  > .pages {
+    background: $gray-lighter;
+    @media screen {
+      @include clearfix;
+    }
+
+    @media print {
+      @include make-row;
+    }
   }
 }
 
 .introduction {
-  @extend .col-md-4;
+  @media screen {
+    @include page;
+    text-align: center;
+    display: table;
 
-  @media (min-width: $screen-md-min) {
-    border-right: 1px solid $gray-lighter;
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      margin: 0 auto;
+      padding: 20px;
+
+      > .profile, .social {
+        display: block;
+      }
+    }
   }
 
   @media print {
-    @extend .col-xs-4;
-    padding-left: 0;
+    float: left;
+    position: relative;
+    width: percentage((4 / $grid-columns));
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;
     border-right: 1px solid $gray-lighter;
     min-height: 100%;
   }
 }
 
-.features {
-  @extend .col-md-8;
-
-  @media print {
-    @extend .col-xs-8;
-    padding-right: 0;
-    min-height: 100%;
-  }
-}
-
-.header {
+.profile {
   text-align: center;
   margin-bottom: $grid-gutter-width;
 
@@ -62,27 +88,136 @@ h6, .h6 { @media print { font-size: ceil(($font-size-h6 * 0.7)); } }
   }
 }
 
+.button {
+  display: inline-block;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  border: 1px solid $brand-primary;
+  border-right: 0;
+
+  &:first-child {
+    border-radius: 21px 0 0 21px;
+  }
+
+  &:last-child {
+    border-radius: 0 21px 21px 0;
+    border-right: 1px solid $brand-primary;
+  }
+}
+
+.social {
+
+  > div {
+    display: inline-block;
+    text-align: left;
+  }
+
+  a.social-link {
+    font-size: 18px;
+    @extend .button;
+
+    @media print {
+      font-size: 12px;
+      display: block;
+      padding: $padding-base-vertical $padding-base-horizontal;
+      border: 0;
+
+      &:first-child {
+        border-radius: 0
+      }
+
+      &:last-child {
+        border-radius: 0;
+        border-right: 0;
+      }
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    .list-inline {
+      margin-left: 0;
+    }
+  }
+}
+
+.features {
+  min-height: 100%;
+
+  @media print {
+    float: left;
+    position: relative;
+    width: percentage((8 / $grid-columns));
+    padding-left: $grid-gutter-width / 2;
+    padding-right: $grid-gutter-width / 2;
+  }
+
+  @media screen {
+    width: 100%;
+  }
+}
+
 section {
-  margin-bottom: $grid-gutter-width;
+  @media screen {
+    @include page;
+
+    > div {
+      padding: 20px;
+      max-width: $container-desktop;
+      margin: 0 auto;
+    }
+  }
+
+  @media print {
+    margin-bottom: $grid-gutter-width;
+
+    > div {
+      display: inline-block;
+      text-align: left;
+    }
+  }
 
   h2 {
     margin-top: 0;
-  }
-
-  .section-header {
     margin-bottom: $grid-gutter-width / 2;
   }
 
   .date-range {
     color: $gray-light;
   }
+}
 
-  .social-link {
-    display: block;
-    padding: $padding-base-vertical $padding-base-horizontal;
+.border {
+  display: block;
+  position: fixed;
+  background: $white;
+  z-index: 100;
 
-    ul {
-      margin-bottom: 5px;
-    }
+  &.top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+  }
+
+  &.bottom {
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 20px;
+  }
+
+  &.left {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+  }
+
+  &.right {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 20px;
   }
 }

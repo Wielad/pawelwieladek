@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
 
-export default class ContactDetails extends Component {
+export default class SocialLink extends Component {
     static propTypes = {
         url: PropTypes.string.isRequired,
         icon: PropTypes.string.isRequired,
@@ -18,7 +18,9 @@ export default class ContactDetails extends Component {
                     <li>
                         <span className={classNames('fa', 'fa-fw', this.props.icon, 'icon')} />
                     </li>
-                    <li className="caption">{this.props.children}</li>
+                    <li className="caption visible-print-inline">
+                        {this.props.children}
+                    </li>
                 </ul>
             </a>
         );

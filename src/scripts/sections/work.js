@@ -10,7 +10,7 @@ export default class Work extends Component {
     render() {
         let jobs = this.props.jobs.map(job => <Job key={job.employer} {...job} />);
         return (
-            <Section title="Work experience">
+            <Section className="work" title="Work experience">
                 {jobs}
             </Section>
         );

@@ -1,45 +1,6 @@
-$gray-base:              #000 !default;
-$gray-darker:            lighten($gray-base, 15%) !default;
-$gray-dark:              lighten($gray-base, 25%) !default;
-$gray:                   lighten($gray-base, 40%) !default;
-$gray-light:             lighten($gray-base, 60%) !default;
-$gray-lighter:           lighten($gray-base, 90%) !default;
-
-$brand-primary:         darken(#428bca, 6.5%) !default;
-$brand-success:         #5cb85c !default;
-$brand-info:            #5bc0de !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
-
-$body-bg:               #fff !default;
-
-$font-family-sans-serif:  "Palanquin", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base:        $font-family-sans-serif !default;
-
-$font-size-base:          15px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default;
-$font-size-small:         ceil(($font-size-base * 0.85)) !default;
-
-$font-size-h1:            ceil(($font-size-base * 2.4)) !default;
-$font-size-h2:            ceil(($font-size-base * 1.6)) !default;
-$font-size-h3:            ceil(($font-size-base * 1.2)) !default;
-$font-size-h4:            $font-size-base !default;
-$font-size-h5:            ceil(($font-size-base * 0.8)) !default;
-$font-size-h6:            ceil(($font-size-base * 0.6)) !default;
-
-$headings-font-weight:    700 !default;
-
-$grid-gutter-width:         50px !default;
-
-
-$jumbotron-padding:              20px !default;
-$jumbotron-color:                inherit !default;
-$jumbotron-bg:                   $body-bg !default;
-$jumbotron-heading-color:        inherit !default;
-$jumbotron-font-size:            $font-size-base !default;
-$jumbotron-heading-font-size:    $font-size-h1 !default;
+@import "bootstrap/variables";
 
 $icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
 $fa-font-path: "../../node_modules/font-awesome/fonts";
+
+$white:               #ffffff;
