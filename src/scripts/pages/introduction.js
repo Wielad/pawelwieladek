@@ -13,10 +13,12 @@ export default class Introduction extends Component {
         let { profile, social } = this.props;
         return (
             <div className="introduction">
-                <div>
-                    <Profile {...profile} />
-                    <Social {...social} />
-                </div>
+                <section>
+                    <div className="section-container">
+                        <Profile {...profile} />
+                        <Social {...social} />
+                    </div>
+                </section>
             </div>
         );
     }

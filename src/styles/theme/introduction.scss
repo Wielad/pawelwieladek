@@ -1,0 +1,13 @@
+@import "profile";
+@import "social";
+
+.introduction {
+  @media screen {
+    @include create-full-page;
+  }
+
+  @media print {
+    @include create-col(xs, 4);
+    min-height: 100%;
+  }
+}

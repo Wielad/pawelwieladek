@@ -1,0 +1,28 @@
+@mixin create-col-width($size) {
+  width: percentage(($size / $grid-columns));
+}
+
+@mixin create-col($class, $size) {
+  float: left;
+  position: relative;
+  padding-left:  ceil(($grid-gutter-width / 2));
+  padding-right: floor(($grid-gutter-width / 2));
+  @if ($class == xs) {
+    @include create-col-width($size);
+  }
+  @if ($class == sm) {
+    @media (min-width: $screen-sm-min) {
+      @include create-col-width($size);
+    }
+  }
+  @if ($class == md) {
+    @media (min-width: $screen-md-min) {
+      @include create-col-width($size);
+    }
+  }
+  @if ($class == lg) {
+    @media (min-width: $screen-lg-min) {
+      @include create-col-width($size);
+    }
+  }
+}

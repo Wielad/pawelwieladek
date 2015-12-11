@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React, { PropTypes, Component } from 'react';
 
-import Section from '../components/section';
 import Job from '../components/job';
 
 import allegroImageSrc from '../../images/allegro.png';
@@ -23,9 +22,16 @@ export default class Work extends Component {
                 imageSrc={Work.images[key]} />
         ));
         return (
-            <Section className="work" title="Work experience">
-                {jobs}
-            </Section>
+            <div className="work">
+                <section>
+                    <div className="section-container">
+                        <h2>Work experience</h2>
+                        <div className="jobs-container">
+                            {jobs}
+                        </div>
+                    </div>
+                </section>
+            </div>
         );
     }
 }

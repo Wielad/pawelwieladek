@@ -1,0 +1,12 @@
+@import "education";
+@import "languages";
+
+.skills {
+  @media screen {
+    @include create-full-page;
+
+    .skills-container {
+      @include make-row;
+    }
+  }
+}

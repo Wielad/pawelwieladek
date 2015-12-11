@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react';
 
-import Section from '../components/section';
 import SocialLink from '../components/social-link';
 
 export default class Social extends Component {
@@ -25,7 +24,7 @@ export default class Social extends Component {
         );
         return (
             <div className="social">
-                <div>
+                <div className="links">
                 {links}
                 </div>
             </div>

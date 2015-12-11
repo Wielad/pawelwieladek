@@ -1,0 +1,15 @@
+.education {
+  @media screen {
+    @include create-col(md, 8);
+
+    h2 {
+      @include create-dotted-header;
+    }
+  }
+
+  .course {
+    .at {
+      color: $gray-light;
+    }
+  }
+}
