@@ -38,6 +38,7 @@ module.exports = {
                 "caption": "/pawelwieladek",
             },
         ],
+        "email": "pawelwieladek@gmail.com",
     },
     "work": {
         "jobs": {
