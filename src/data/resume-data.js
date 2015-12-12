@@ -3,7 +3,7 @@ module.exports = {
         "firstName": "Pawel",
         "lastName": "Wieladek",
         "title": "Web Developer",
-        "description": "24-year old web developer from Warsaw, Poland with 3+ years of experience in software development.",
+        "description": "24-year old web developer from Warsaw, Poland with 3+ years of professional experience in software development.",
     },
     "contact": {
         "email": "pawelwieladek@gmail.com",
