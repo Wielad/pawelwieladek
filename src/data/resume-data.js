@@ -91,7 +91,7 @@ module.exports = {
                 "name": "Master degree",
                 "university": "Warsaw University of Technology",
                 "from": "Sep 2014",
-                "to": "Jan 2016",
+                "to": "Dec 2015",
                 "project": "Comparison of two artificial intelligence algorithms playing the 2048 Game.",
             },
             {
