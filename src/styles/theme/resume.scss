@@ -21,7 +21,7 @@
   }
 
   .border {
-    @media screen {
+    @media screen and (min-width: $screen-sm-min) {
       display: block;
       position: fixed;
       background: $white;
