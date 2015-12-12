@@ -12,4 +12,11 @@
       @include create-dotted-header;
     }
   }
+
+  .description {
+    @media print {
+      font-size: $font-size-base;
+      font-weight: 400;
+    }
+  }
 }

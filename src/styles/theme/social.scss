@@ -11,7 +11,7 @@
       padding: $padding-base-vertical $padding-base-horizontal;
 
       @media print {
-        font-size: 12px;
+        font-size: $font-size-base * $print-font-size-factor;
         display: block;
         border: 0;
 

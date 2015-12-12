@@ -7,6 +7,14 @@
     }
   }
 
+  @media print {
+    h2 {
+      border-bottom: 1px solid $print-border-color;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
   .course {
     .at {
       color: $gray-light;

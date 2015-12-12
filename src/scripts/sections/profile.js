@@ -17,7 +17,7 @@ export default class Profile extends Component {
                 <img src={profilePictureSrc} />
                 <h1>{firstName} {lastName}</h1>
                 <h2>{title}</h2>
-                <h3>{description}</h3>
+                <h3 className="description">{description}</h3>
             </div>
         );
     }

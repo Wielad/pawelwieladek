@@ -8,6 +8,7 @@
 
   @media print {
     @include create-col(xs, 4);
+    border-right: 1px solid $print-border-color;
     min-height: 100%;
   }
 }

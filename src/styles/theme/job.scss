@@ -48,11 +48,12 @@
     color: $gray-light;
 
     @media print {
-      font-size: 75%;
+      font-size: 90%;
       line-height: 1;
       margin-left: 5px;
       margin-bottom: 5px;
       border-radius: 13px;
+      padding: .2em .6em .5em;
     }
   }
 }
