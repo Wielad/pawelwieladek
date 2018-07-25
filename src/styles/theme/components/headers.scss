@@ -1,7 +1,0 @@
-body { @media print { font-size: ceil(($font-size-base * $print-font-size-factor)); } }
-h1, .h1 { @media print { font-size: ceil(($font-size-h1 * $print-font-size-factor)); } }
-h2, .h2 { @media print { font-size: ceil(($font-size-h2 * $print-font-size-factor)); } }
-h3, .h3 { @media print { font-size: ceil(($font-size-h3 * $print-font-size-factor)); } }
-h4, .h4 { @media print { font-size: ceil(($font-size-h4 * $print-font-size-factor)); } }
-h5, .h5 { @media print { font-size: ceil(($font-size-h5 * $print-font-size-factor)); } }
-h6, .h6 { @media print { font-size: ceil(($font-size-h6 * $print-font-size-factor)); } }

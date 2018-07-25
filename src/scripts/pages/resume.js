@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Introduction from './introduction';
 import Features from './features';
@@ -16,10 +17,10 @@ export default class Resume extends Component {
         let { profile, social, work, education, languages } = this.props;
         return (
             <div className="resume">
-                <div className="border top"></div>
-                <div className="border right"></div>
-                <div className="border bottom"></div>
-                <div className="border left"></div>
+                <div className="border top" />
+                <div className="border right" />
+                <div className="border bottom" />
+                <div className="border left" />
                 <div className="pages">
                     <Introduction profile={profile} social={social} />
                     <Features

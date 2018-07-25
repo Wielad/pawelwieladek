@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import SocialLink from '../components/social-link';
 
@@ -15,18 +16,18 @@ export default class Social extends Component {
     }
     render() {
         let links = this.props.links.map(link => (
-                <SocialLink
-                    key={link.name}
-                    url={link.url}
-                    icon={Social.icons[link.name]}>
-                    {link.caption}
-                </SocialLink>
-            )
+            <SocialLink
+                key={link.name}
+                url={link.url}
+                icon={Social.icons[link.name]}>
+                {link.caption}
+            </SocialLink>
+        )
         );
         return (
             <div className="social">
                 <div className="links">
-                {links}
+                    {links}
                 </div>
                 <div className="email">
                     <a href={`mailto:${this.props.email}`} target="_blank" className="email-button">
